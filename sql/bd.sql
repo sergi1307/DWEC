@@ -1,4 +1,6 @@
-CREATE DATABASE BIBLIOTECA;
+-- Active: 1762339856350@@localhost@3306@biblioteca
+DROP DATABASE IF EXISTS biblioteca;
+CREATE DATABASE biblioteca;
 USE biblioteca;
 
 -- Esta clase es per a que el projecte siga mes escalable
@@ -10,9 +12,6 @@ USE biblioteca;
 --     telefono CHAR(9),
 --     correo_electronico VARCHAR(100)
 -- );
-
-DROP DATABASE biblioteca;
-USE biblioteca;
 
 CREATE TABLE TipusRecursos (
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -55,6 +54,9 @@ CREATE TABLE personas (
 -- La dejamos puesta por si es necesario añadir más datos posteriormente
 CREATE TABLE socio (
     id_persona INT PRIMARY KEY,
+    correo_electronico VARCHAR(100) UNIQUE,
+    telefono CHAR(9) UNIQUE,
+
     FOREIGN KEY (id_persona) REFERENCES personas(id_persona)
 );
 

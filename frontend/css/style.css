@@ -1,0 +1,89 @@
+body {
+    display: flex;
+    justify-content: center;
+    font-family: 'segoe UI';
+    font-size: 15px;
+    background-color: rgb(232, 232, 232);
+}
+
+#formulario_socios {
+    background-color: #ffffff;
+    width: 450px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 1em;
+}
+
+button {
+    display: flex;
+    justify-content: flex-end;
+    background-color: white;
+    border: none;
+    color: #545454;
+    height: 0px;
+}
+
+button:hover {
+    color: #0b0b0b;
+    transition: all 0.5s;
+}
+
+#formulario_socios label {
+    font-weight: bold;
+}
+
+input {
+    margin-top: 0.4em;
+    padding: 0.8em;
+    background-color: #f3f3f5;
+    border: 1px solid transparent;
+    border-radius: 8px;
+}
+
+input:focus {
+    outline: none;
+    border: 1px solid #b0b0b0;
+    box-shadow: 0px 1px 0px 3px rgba(207, 207, 207, 0.7),
+                0px -1px 0px 3px rgba(207, 207, 207, 0.7),
+                1px 0px 0px 3px rgba(207, 207, 207, 0.7),
+                -1px 0px 0px 3px rgba(207, 207, 207, 0.7)
+    ;
+    transition: box-shadow 0.3s;
+}
+
+.botones {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+    flex-direction: row;
+}
+
+.botones input {
+    padding: 10px 20px;
+}
+
+.cancelar {
+    background-color: white;
+    width: auto;
+    border: 1.4px solid #e7e7e7;
+}
+
+.cancelar:hover {
+    background-color: #e9ebef;
+    border-color: #d1d3d7;
+    transition: all 0.6s;
+}
+
+.crear {
+    background-color: #030213;
+    
+    color: white;
+    margin-left: 10px;
+}
+
+.crear:hover {
+    background-color: #1c1b2a;
+    transition: all 0.6s;
+}

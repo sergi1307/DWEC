@@ -1,0 +1,35 @@
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: biblioteca_sql
+    env_file:
+      - .env
+    ports:
+      - "3306:3306"
+    volumes:
+      - sql\docker-entrypoint.sh:/docker-entrypoint-initdb.d
+      - biblioteca:/var/lib/mysql
+
+  node:
+    image: node:latest
+    container_name: biblioteca-node
+    working_dir: /app/server
+    volumes:
+      - .:/app
+    environment:
+      - NODE_ENV=${NODE_ENV}
+      - DB_HOST=${DB_HOST}
+      - DB_USER=${DB_USER}
+      - DB_PASSWORD=${DB_PASSWORD}
+      - DB_NAME=${DB_NAME}
+      - PORT=${PORT}
+
+    ports:
+      - "80:80"
+    command: >
+      sh -c "npm install && if [ \"$NODE_ENV\" = \"production\" ]; then npm start; else npm start; fi"
+    depends_on:
+      - mysql
+
+volumes:
+  biblioteca:
